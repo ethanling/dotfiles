@@ -1,23 +1,27 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+set nocompatible
+filetype off
 
-call plug#begin('~/.vim/plugged')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plug 'vim-airline/vim-airline'
-Plug 'dikiaap/minimalist'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'jiangmiao/auto-pairs'
-Plug 'hzchirs/vim-material'
-Plug 'alvan/vim-closetag'
+Plugin 'Vundle/Vundle.vim'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'dikiaap/minimalist'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'hzchirs/vim-material'
+Plugin 'alvan/vim-closetag'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'leafOfTree/vim-svelte-plugin'
 
-call plug#end()
-
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js"
+call vundle#end()
+filetype plugin indent on 
+"let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js,*.tsx,*.ts,*.svelte"
 
 if &term =~# '^screen'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -30,7 +34,6 @@ colorscheme minimalist
 
 
 let g:airline_theme='minimalist'
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -38,7 +41,7 @@ hi Normal guibg=NONE ctermbg=NONE
 set number
 set cursorline
 set smarttab
-set cindent
+"set cindent
 set shiftwidth=4
 set tabstop=4
 syntax on
@@ -47,7 +50,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
-let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeAutoDeleteBuffer = 0
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 

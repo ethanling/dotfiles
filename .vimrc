@@ -13,6 +13,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 call vundle#end()
 filetype plugin indent on 

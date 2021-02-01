@@ -13,6 +13,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
+Plugin 'preservim/nerdcommenter'
+Plugin 'mattn/emmet-vim'
 Plugin 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -64,5 +66,8 @@ nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
 nmap <leader><leader> V
+
+" Emmet
+let g:user_emmet_leader_key=','
 
 set backspace=indent,eol,start

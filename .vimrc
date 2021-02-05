@@ -1,3 +1,4 @@
+set termguicolors
 set nocompatible
 filetype off
 
@@ -8,9 +9,13 @@ Plugin 'Vundle/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ghifarit53/tokyonight-vim'
 Plugin 'ethanling/vim-material-custom'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
 Plugin 'preservim/nerdcommenter'
@@ -23,11 +28,14 @@ call vundle#end()
 filetype plugin indent on 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js,*.tsx,*.ts,*.svelte"
 
-set t_Co=256
-set termguicolors
-
-colorscheme material 
+"colorscheme material 
 set background=dark
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
+
+colorscheme tokyonight
 
 let g:airline_theme='transparent'
 let g:airline#extensions#tabline#enabled = 1
@@ -49,13 +57,8 @@ let NERDTreeAutoDeleteBuffer = 0
 let NERDTreeMinimalUI = 1 
 let NERDTreeDirArrows = 1 
 let NERDTreeShowHidden = 1
-hi VertSplit guibg=NONE
-hi VertSplit guifg=black
-
-
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-
+"hi VertSplit guibg=NONE
+"hi VertSplit guifg=black
 let mapleader= " "
 
 map - <C-W>-

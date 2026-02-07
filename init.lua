@@ -46,9 +46,12 @@ require("lazy").setup({
     spec = {
     -- add your plugins here
         {
-            "rebelot/kanagawa.nvim",
+            "sainnhe/gruvbox-material",
             lazy = false,
-            priority = 1,
+            priority = 1000,
+            config = function()
+                vim.cmd.colorscheme('gruvbox-material')
+            end
         },
         {
             "nvim-neo-tree/neo-tree.nvim",
@@ -64,6 +67,7 @@ require("lazy").setup({
 	        "xiyaowong/transparent.nvim",
             lazy = false,
             priority = 1000,
+            build = ':TransparentEnable'
         },
         {
             'windwp/nvim-autopairs',
@@ -91,15 +95,13 @@ require("lazy").setup({
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "kanagawa" } },
+    install = { colorscheme = { "gruvbox-material" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
 
-vim.cmd("colorscheme kanagawa-dragon")
-
 require('lualine').setup{
-    options = { theme = 'kanagawa' }
+    options = { theme = 'gruvbox' }
 }
 
 require('nvim-treesitter').setup({
